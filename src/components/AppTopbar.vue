@@ -54,6 +54,10 @@ const onTopbarMenuToggle = (event: any) => {
 </template>
 
 <style scoped>
+img {
+  margin-left: 0.5rem;
+}
+
 .navbar {
   background-color: #205081;
 }
