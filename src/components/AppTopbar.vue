@@ -16,8 +16,8 @@ const onTopbarMenuToggle = (event: any) => {
       <i class="pi pi-bars" />
     </button>
     <NuxtLink to="/" class="layout-topbar-logo">
-      <!-- <img alt="Logo" :src=""> -->
-      <span>SSE</span>
+      <img alt="Logo" src="/images/logo_ups.png">
+      <span class="title">Administraci&oacute;n</span>
     </NuxtLink>
 
     <button v-styleclass="{
@@ -52,3 +52,10 @@ const onTopbarMenuToggle = (event: any) => {
     </ul>
   </div>
 </template>
+
+<style scoped>
+.title {
+  font-size: 1.2rem;
+  /* font-weight: 600; */
+}
+</style>
