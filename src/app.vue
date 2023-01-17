@@ -72,3 +72,9 @@ const onWrapperClick = (event: Event) => {
     </div>
   </div>
 </template>
+
+<style>
+.layout-sidebar {
+  background-color: #dddddd;
+}
+</style>

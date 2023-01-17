@@ -11,7 +11,7 @@ const onTopbarMenuToggle = (event: any) => {
 </script>
 
 <template>
-  <div class="layout-topbar">
+  <nav class="layout-topbar navbar">
     <button class="p-link layout-menu-button layout-topbar-button" @click="onMenuToggle">
       <i class="pi pi-bars" />
     </button>
@@ -50,12 +50,21 @@ const onTopbarMenuToggle = (event: any) => {
         </button>
       </li>
     </ul>
-  </div>
+  </nav>
 </template>
 
 <style scoped>
+.navbar {
+  background-color: #205081;
+}
+
 .title {
   font-size: 1.2rem;
+  color: white;
   /* font-weight: 600; */
+}
+
+.pi-bars {
+  color: #a0a0a0;
 }
 </style>
