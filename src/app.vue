@@ -1,11 +1,74 @@
 <script setup lang="ts">
-const onClick = (event: Event) => {
-  console.log('Hello World', event)
+import { ref } from 'vue'
+
+import AppTopbar from './components/AppTopbar.vue'
+import AppMenu from './components/AppMenu.vue'
+import { MenuItem } from './models/menu-item.model';
+
+const isMenuOpen = ref<boolean>(false)
+const mobileMenuActive = ref<boolean>(false)
+const overlayMenuActive = ref<boolean>(false)
+const staticMenuInactive = ref<boolean>(true)
+const layoutMode = ref<'static' | 'overlay'>('static')
+
+const containerClass = computed(() => ['layout-wrapper', {
+  'layout-overlay': layoutMode.value === 'overlay',
+  'layout-static': layoutMode.value === 'static',
+  'layout-static-sidebar-inactive': staticMenuInactive.value && layoutMode.value === 'static',
+  'layout-overlay-sidebar-active': overlayMenuActive.value && layoutMode.value === 'overlay',
+  'layout-mobile-sidebar-active': mobileMenuActive.value,
+}])
+
+const isDesktop = () => window.innerWidth >= 992
+
+const onMenuToggle = (event: Event) => {
+  isMenuOpen.value = !isMenuOpen.value
+  if (isDesktop()) {
+    if (layoutMode.value === 'overlay') {
+      if (mobileMenuActive.value)
+        overlayMenuActive.value = true
+
+      mobileMenuActive.value = false
+      overlayMenuActive.value = !overlayMenuActive.value
+
+    } else if (layoutMode.value === 'static') {
+      staticMenuInactive.value = !staticMenuInactive.value
+    }
+
+  } else {
+    mobileMenuActive.value = !mobileMenuActive.value
+  }
+  event.preventDefault()
+}
+
+const onMenuItemClick = (item: MenuItem) => {
+  if (item && !item.items) {
+    overlayMenuActive.value = false
+    mobileMenuActive.value = false
+  }
+}
+
+const onWrapperClick = (event: Event) => {
+  if (!isMenuOpen.value) {
+    overlayMenuActive.value = false
+    mobileMenuActive.value = false
+  }
+
+  isMenuOpen.value = false
 }
 </script>
 
 <template>
-  <div>
-    <Button label="Prime" icon="pi pi-check" @click="onClick"></Button>
+  <div :class="containerClass" @click="onWrapperClick">
+    <AppTopbar @menu-toggle="onMenuToggle"></AppTopbar>
+    <div class="layout-sidebar">
+      <AppMenu @menuitem-click="onMenuItemClick" />
+    </div>
+
+    <div class="layout-main-container">
+      <div class="layout-main">
+        <NuxtPage />
+      </div>
+    </div>
   </div>
 </template>
