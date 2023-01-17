@@ -1,6 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     srcDir: 'src',
+    app:{
+        head: {
+            title: 'UPS',
+        }
+    },
     css: [
         'primevue/resources/themes/saga-blue/theme.css',
         'primevue/resources/primevue.css',
@@ -11,5 +16,5 @@ export default defineNuxtConfig({
     ],
     build: {
         transpile: ['primevue']
-    }
+    },
 })
