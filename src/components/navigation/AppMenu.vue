@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import AppMenuItem from './AppMenuItem.vue';
+import AppMenuItem from '../navigation/AppMenuItem.vue';
 
-import { MenuItem } from '../models/menu-item.model';
+import { MenuItem } from '../../models/menu-item.model';
 
 const emit = defineEmits(['menuitem-click'])
 

@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import AppTopbar from './components/AppTopbar.vue'
-import AppMenu from './components/AppMenu.vue'
 import { MenuItem } from './models/menu-item.model';
+
+import AppMenu from './components/navigation/AppMenu.vue'
+import AppTopbar from './components/navigation/AppTopbar.vue'
+import AppFooter from './components/navigation/AppFooter.vue'
 
 const isMenuOpen = ref<boolean>(false)
 const mobileMenuActive = ref<boolean>(false)
@@ -69,6 +71,7 @@ const onWrapperClick = (event: Event) => {
       <div class="layout-main">
         <NuxtPage />
       </div>
+      <AppFooter />
     </div>
   </div>
 </template>

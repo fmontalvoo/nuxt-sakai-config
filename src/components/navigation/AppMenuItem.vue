@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MenuItem } from '../models/menu-item.model';
+import { MenuItem } from '../../models/menu-item.model';
 
 const activeIndex = ref<number | null>()
 
