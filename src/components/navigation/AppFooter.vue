@@ -5,7 +5,8 @@ const currentYear = new Date().getFullYear()
 <template>
     <footer>
         <div class="layout-footer">
-            <span class="font-medium ml-2">Universidad Politécnica Salesiana {{ currentYear }}. Derechos Reservados.
+            <span class="font-medium ml-2">
+                {{ $t('app.footer.title', { year: currentYear }) }}
             </span>
         </div>
         <div class="layout-footer-img">

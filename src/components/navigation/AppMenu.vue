@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import AppMenuItem from '../navigation/AppMenuItem.vue';
+import { useI18n } from 'vue-i18n'
 
-import { MenuItem } from '../../models/menu-item.model';
+import AppMenuItem from '../navigation/AppMenuItem.vue'
+
+import { MenuItem } from '../../models/menu-item.model'
+
+const { t } = useI18n()
 
 const emit = defineEmits(['menuitem-click'])
 
@@ -11,10 +15,10 @@ const onMenuItemClick = (item: MenuItem) => {
 
 const menu: MenuItem[] = [
   {
-    label: 'Menú',
+    label: t('app.menu.title'),
     items: [
-      { label: 'Inicio', icon: 'pi pi-fw pi-home', to: '/' },
-      { label: 'Acerca de', icon: 'pi pi-fw pi-id-card', to: '/about' },
+      { label: t('app.menu.label.home'), icon: 'pi pi-fw pi-home', to: '/' },
+      { label: t('app.menu.label.about'), icon: 'pi pi-fw pi-id-card', to: '/about' },
     ]
   },
   // {
@@ -37,6 +41,4 @@ const menu: MenuItem[] = [
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

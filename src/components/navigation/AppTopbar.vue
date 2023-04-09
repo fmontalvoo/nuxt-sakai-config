@@ -5,9 +5,9 @@ const onMenuToggle = (event: any) => {
   emit('menu-toggle', event)
 }
 
-const onTopbarMenuToggle = (event: any) => {
-  emit('topbar-menu-toggle', event)
-}
+// const onTopbarMenuToggle = (event: any) => {
+//   emit('topbar-menu-toggle', event)
+// }
 </script>
 
 <template>
@@ -17,7 +17,7 @@ const onTopbarMenuToggle = (event: any) => {
     </button>
     <NuxtLink to="/" class="layout-topbar-logo">
       <img alt="Logo" src="/images/logo_ups.png">
-      <span class="title">Administraci&oacute;n</span>
+      <span class="title">{{ $t('app.navbar.title') }}</span>
     </NuxtLink>
 
     <button v-styleclass="{
@@ -34,19 +34,19 @@ const onTopbarMenuToggle = (event: any) => {
       <li>
         <button class="p-link layout-topbar-button">
           <i class="pi pi-calendar" />
-          <span>Events</span>
+          <span>{{ $t('app.navbar.events') }}</span>
         </button>
       </li>
       <li>
         <button class="p-link layout-topbar-button">
           <i class="pi pi-cog" />
-          <span>Settings</span>
+          <span>{{ $t('app.navbar.settings') }}</span>
         </button>
       </li>
       <li>
         <button class="p-link layout-topbar-button">
           <i class="pi pi-user" />
-          <span>Profile</span>
+          <span>{{ $t('app.navbar.profile') }}</span>
         </button>
       </li>
     </ul>

@@ -5,7 +5,6 @@ export default defineNuxtConfig({
         head: {
             title: 'UPS',
             meta: [
-                { lang: 'es' },
                 { charset: 'utf-8' },
                 { hid: 'description', name: 'description', content: 'UPS' },
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -22,5 +21,5 @@ export default defineNuxtConfig({
     ],
     build: {
         transpile: ['primevue']
-    },
+    }
 })

@@ -1,0 +1,18 @@
+{
+    "navbar": {
+        "title": "Administración",
+        "events": "Eventos",
+        "config": "Configuración",
+        "profile": "Perfil"
+    },
+    "menu": {
+        "title": "Menú",
+        "label": {
+            "home": "Inicio",
+            "about": "Acerca de"
+        }
+    },
+    "footer": {
+        "title": "FGMO {year}. Derechos Reservados."
+    }
+}
