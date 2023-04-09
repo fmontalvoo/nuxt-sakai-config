@@ -3,10 +3,10 @@ export default defineNuxtConfig({
     srcDir: 'src',
     app: {
         head: {
-            title: 'UPS',
+            title: 'FGMO',
             meta: [
                 { charset: 'utf-8' },
-                { hid: 'description', name: 'description', content: 'UPS' },
+                { hid: 'description', name: 'description', content: 'FGMO' },
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             ]
         }
