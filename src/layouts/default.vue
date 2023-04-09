@@ -1,11 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import { MenuItem } from '@/models/menu-item.model'
-
-import AppMenu from '@/components/navigation/AppMenu.vue'
-import AppTopbar from '@/components/navigation/AppTopbar.vue'
-import AppFooter from '@/components/navigation/AppFooter.vue'
+import { MenuItem } from '~/models/menu-item'
 
 const isMenuOpen = ref<boolean>(false)
 const mobileMenuActive = ref<boolean>(false)
@@ -62,7 +58,7 @@ const onWrapperClick = (event: Event) => {
 
 <template>
   <div :class="containerClass" @click="onWrapperClick">
-    <AppTopbar @menu-toggle="onMenuToggle"></AppTopbar>
+    <AppNavbar @menu-toggle="onMenuToggle"></AppNavbar>
     <div class="layout-sidebar">
       <AppMenu @menuitem-click="onMenuItemClick" />
     </div>

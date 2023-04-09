@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 
-import AppMenuItem from '../navigation/AppMenuItem.vue'
-
-import { MenuItem } from '../../models/menu-item.model'
+import { MenuItem } from '@/models/menu-item'
 
 const { t } = useI18n()
 
